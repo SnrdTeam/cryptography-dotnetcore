@@ -1,0 +1,11 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <SignAssembly>True</SignAssembly>
+    <PublicSign>True</PublicSign>
+    <DelaySign>False</DelaySign>
+    <AssemblyOriginatorKeyFile>Adeptik-PublicKey.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+
+</Project>

@@ -20,7 +20,7 @@
 
   <!-- Version -->
   <PropertyGroup>
-    <SemanticVersion>1.0.0</SemanticVersion>
+    <SemanticVersion>2.0.0</SemanticVersion>
     <PreReleaseLabel>fall19</PreReleaseLabel>
     <BuildMetadata>developer.build</BuildMetadata>
     <PreReleaseLabelWithPrefix Condition=" '$(PreReleaseLabel)' != '' ">-$(PreReleaseLabel)</PreReleaseLabelWithPrefix>
@@ -29,7 +29,14 @@
     <AssemblyVersion>$(SemanticVersion)</AssemblyVersion>
     <FileVersion>$(SemanticVersion)</FileVersion>
     <GenerateAssemblyInfo>True</GenerateAssemblyInfo>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
   </PropertyGroup>
+  <ItemGroup>
+    <None Include="..\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
 
   <Target Name="ValidateVersion" BeforeTargets="BeforeBuild">
     <PropertyGroup>

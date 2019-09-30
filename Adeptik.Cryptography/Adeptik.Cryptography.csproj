@@ -29,6 +29,7 @@
     <AssemblyVersion>$(SemanticVersion)</AssemblyVersion>
     <FileVersion>$(SemanticVersion)</FileVersion>
     <GenerateAssemblyInfo>True</GenerateAssemblyInfo>
+    <PackageIconUrl>https://raw.githubusercontent.com/SnrdTeam/snrd-icons/master/development-icons/dotnet-icon%4064.png</PackageIconUrl>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
   </PropertyGroup>
   <ItemGroup>

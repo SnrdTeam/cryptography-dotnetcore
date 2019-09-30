@@ -18,3 +18,11 @@ Type converters:
 Algorithms:
 
 - Adler32 - Adler-32 cyclic redundancy check algorithm as it described in [RFC1950](https://tools.ietf.org/html/rfc1950#section-9).
+
+## Installation
+
+Add reference for NuGet "Adeptik.CommandLineUtils" package in Visual Studio or run following in Package Manager Console:
+
+    Install-Package Adeptik.Cryptography
+
+Your project should target at list NETStandart 2.1.

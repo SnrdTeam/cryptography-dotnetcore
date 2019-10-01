@@ -29,7 +29,7 @@ namespace Adeptik.Cryptography.Converters
             Adler32.EnsureRegistered();
         }
 
-        private const string HashAlgorithmName = "Adler-32";
+        private const string HashAlgorithmName = Adler32.AlgorithmName;
 
         /// <inheritdoc />
         /// <exception cref="InvalidOperationException">Hash algorithm is not applicable due to its hash size is 0.</exception>

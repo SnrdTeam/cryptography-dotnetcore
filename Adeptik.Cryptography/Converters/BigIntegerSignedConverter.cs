@@ -26,7 +26,7 @@ namespace Adeptik.Cryptography.Converters
     {
         static BigIntegerSignedConverter()
         {
-            CryptoConfig.AddAlgorithm(typeof(Adler32), "Adler-32");
+            Adler32.EnsureRegistered();
         }
 
         private const string HashAlgorithmName = "Adler-32";

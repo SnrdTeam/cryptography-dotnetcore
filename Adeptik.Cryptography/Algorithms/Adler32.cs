@@ -11,6 +11,16 @@ namespace Adeptik.Cryptography.Algorithms
     {
         private uint _hashValue = 1;
 
+        /// <summary>
+        /// Method registers Adler-32 algorihm using CryptoConfig 
+        /// if algorithm with such name not already register
+        /// </summary>
+        public static void EnsureRegistered()
+        {
+            using var algorithm = (IDisposable)CryptoConfig.CreateFromName("Adler-32");
+            if (algorithm == null)
+                CryptoConfig.AddAlgorithm(typeof(Adler32), "Adler-32");
+        }
         /// <inheritdoc />
         public override void Initialize()
         {

@@ -16,7 +16,7 @@ namespace Adeptik.Cryptography.Converters
     /// </list>
     /// At the beginning of string could be a '-' sign (before '0x' in hex format), indicates that the value is negative. '+' sign is not supported, positive value should not have a sign.
     /// </remarks>
-    public class BigIntegerTypeConverter : TypeConverter
+    public class BigIntegerConverter : TypeConverter
     {
         /// <inheritdoc />
         public override bool CanConvertFrom(ITypeDescriptorContext context, Type sourceType)
@@ -79,7 +79,7 @@ namespace Adeptik.Cryptography.Converters
         /// <summary>
         /// Big integer converter with hexadecimal output text format. Converts a value to <see cref="string"/> in following format "[-]0x&lt;hex digits&gt;". For example, "-0x2a".
         /// </summary>
-        public class HexOut : BigIntegerTypeConverter
+        public class HexOut : BigIntegerConverter
         {
             /// <inheritdoc />
             public override bool CanConvertTo(ITypeDescriptorContext context, Type destinationType)
@@ -106,7 +106,7 @@ namespace Adeptik.Cryptography.Converters
         /// <summary>
         /// Big integer converter with decimal output text format. Converts a value to <see cref="string"/> in following format "[-]&lt;dec digits&gt;". For example, "-42".
         /// </summary>
-        public class DecOut : BigIntegerTypeConverter
+        public class DecOut : BigIntegerConverter
         {
             /// <inheritdoc />
             public override bool CanConvertTo(ITypeDescriptorContext context, Type destinationType)

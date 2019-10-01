@@ -9,8 +9,30 @@ namespace Adeptik.Cryptography.Algorithms
     /// </summary>
     public class Adler32 : HashAlgorithm
     {
+        /// <summary>
+        /// Algorithm name used for registration via <see cref="CryptoConfig"/>
+        /// </summary>
+        public const string AlgorithmName = "Adler-32";
+
         private uint _hashValue = 1;
 
+        /// <summary>
+        /// Method registers Adler-32 algorihm using <see cref="CryptoConfig"/> 
+        /// if algorithm with such name not already register
+        /// </summary>
+        public static void EnsureRegistered()
+        {
+            var algorithm = CryptoConfig.CreateFromName(AlgorithmName);
+            try
+            {
+                if (algorithm == null)
+                    CryptoConfig.AddAlgorithm(typeof(Adler32), AlgorithmName);
+            }
+            finally
+            {
+                (algorithm as IDisposable)?.Dispose();
+            }
+        }
         /// <inheritdoc />
         public override void Initialize()
         {

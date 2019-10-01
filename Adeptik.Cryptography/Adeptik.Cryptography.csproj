@@ -5,7 +5,7 @@
     <Description>.NET Core hosting infrastructures for Adeptik applications.</Description>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <PackageTags>cryptography</PackageTags>
-    
+
     <RootNamespace>Adeptik.Cryptography</RootNamespace>
     <AssemblyName>Adeptik.Cryptography</AssemblyName>
     <Authors>Adeptik</Authors>
@@ -14,13 +14,13 @@
     <SignAssembly>True</SignAssembly>
     <PublicSign>True</PublicSign>
     <DelaySign>False</DelaySign>
-    
+
     <AssemblyOriginatorKeyFile>Adeptik-PublicKey.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
 
   <!-- Version -->
   <PropertyGroup>
-    <SemanticVersion>1.0.0</SemanticVersion>
+    <SemanticVersion>2.0.0</SemanticVersion>
     <PreReleaseLabel>fall19</PreReleaseLabel>
     <BuildMetadata>developer.build</BuildMetadata>
     <PreReleaseLabelWithPrefix Condition=" '$(PreReleaseLabel)' != '' ">-$(PreReleaseLabel)</PreReleaseLabelWithPrefix>
@@ -29,7 +29,13 @@
     <AssemblyVersion>$(SemanticVersion)</AssemblyVersion>
     <FileVersion>$(SemanticVersion)</FileVersion>
     <GenerateAssemblyInfo>True</GenerateAssemblyInfo>
+    <PackageIconUrl>https://raw.githubusercontent.com/SnrdTeam/snrd-icons/master/development-icons/dotnet-icon%4064.png</PackageIconUrl>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
   </PropertyGroup>
+  
+  <ItemGroup>
+    <None Include="..\LICENSE" Pack="True" PackagePath=""/>
+  </ItemGroup>
 
   <Target Name="ValidateVersion" BeforeTargets="BeforeBuild">
     <PropertyGroup>

@@ -8,12 +8,12 @@ Library includes:
 
 Special type:
 
-- BigIntegerSigned - big integer number with error control code included (Adler-32 used by default)
+- BigIntegerSigned - big integer number with error control code included.
 
 Type converters:
 
 - BigIntegerConverter - big integer converter supports hex & decimal string representation for positive & negative numbers
-- BigIntegerSignedConverter - convert and check bigintegersigned from hex & decimal representation.
+- BigIntegerSignedConverter - convert and check bigintegersigned from hex & decimal representation (Adler-32 checksum used by default).
 
 Algorithms:
 

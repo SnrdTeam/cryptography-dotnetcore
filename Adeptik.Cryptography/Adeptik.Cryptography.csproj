@@ -10,6 +10,8 @@
     <AssemblyName>Adeptik.Cryptography</AssemblyName>
     <Authors>Adeptik</Authors>
     <Copyright>Copyright © Adeptik LLC</Copyright>
+    <PackageIconUrl>https://raw.githubusercontent.com/SnrdTeam/snrd-icons/master/development-icons/dotnet-icon%4064.png</PackageIconUrl>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
 
     <SignAssembly>True</SignAssembly>
     <PublicSign>True</PublicSign>
@@ -20,32 +22,15 @@
 
   <!-- Version -->
   <PropertyGroup>
-    <SemanticVersion>2.0.0</SemanticVersion>
-    <PreReleaseLabel>fall19</PreReleaseLabel>
-    <BuildMetadata>developer.build</BuildMetadata>
-    <PreReleaseLabelWithPrefix Condition=" '$(PreReleaseLabel)' != '' ">-$(PreReleaseLabel)</PreReleaseLabelWithPrefix>
-    <BuildMetadataWithPrefix Condition=" '$(BuildMetadata)' != '' ">+$(BuildMetadata)</BuildMetadataWithPrefix>
-    <Version>$(SemanticVersion)$(PreReleaseLabelWithPrefix)$(BuildMetadataWithPrefix)</Version>
-    <AssemblyVersion>$(SemanticVersion)</AssemblyVersion>
-    <FileVersion>$(SemanticVersion)</FileVersion>
-    <GenerateAssemblyInfo>True</GenerateAssemblyInfo>
-    <PackageIconUrl>https://raw.githubusercontent.com/SnrdTeam/snrd-icons/master/development-icons/dotnet-icon%4064.png</PackageIconUrl>
-    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <VersionPrefix>2.0.0</VersionPrefix>
+    <VersionSuffix>fall19</VersionSuffix>
   </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Adeptik.SemanticVersion" Version="1.0.0" />
+  </ItemGroup>
   
   <ItemGroup>
     <None Include="..\LICENSE" Pack="True" PackagePath=""/>
   </ItemGroup>
-
-  <Target Name="ValidateVersion" BeforeTargets="BeforeBuild">
-    <PropertyGroup>
-      <!-- Regular expression from https://github.com/semver/semver/issues/232 -->
-      <IsVersionValid>$([System.Text.RegularExpressions.Regex]::IsMatch($(Version), `^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(-(0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(\.(0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*)?(\+[0-9a-zA-Z-]+(\.[0-9a-zA-Z-]+)*)?$`, RegexOptions.None))</IsVersionValid>
-    </PropertyGroup>
-    <Error Text="Version has invalid format. See https://semver.org" Condition=" '$(IsVersionValid)' != 'True' " />
-  </Target>
-
-  <!-- /Version -->
-
 
 </Project>
